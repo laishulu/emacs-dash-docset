@@ -1,0 +1,32 @@
+#+TITLE: README
+
+* About
+Generate Dash/Zeal docset for Emacs.
+
+* Usage
+1. Download and extract Emacs documentation tar ball.
+   #+begin_src sh
+   wget https://www.gnu.org/software/emacs/manual/emacs.html_node.tar.gz
+   tar -xzvf emacs.html_node.tar.gz
+   #+end_src
+2. Start a local static web server.
+   - Install server software.
+     #+begin_src sh
+     brew install static-web-server-bin
+     #+end_src
+     or install in other ways, see: https://github.com/static-web-server/static-web-server
+   - Serve emacs documentation.
+     #+begin_src sh
+     static-web-server -d ./emacs
+     #+end_src
+3. Install dependency.
+   #+begin_src sh
+   pipenv install
+   #+end_src
+4. Generate docset
+   #+begin_src sh
+   python3 generate.py
+   #+end_src
+
+* Thanks
+Original codes comes from https://github.com/iamaziz/emacs-dash
