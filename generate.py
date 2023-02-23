@@ -35,10 +35,10 @@ def url_to_request(path):
     return root_url + path
 
 def scrape_root():
-    soup = bs(get_text(root_url))
-    index = str(soup.find(id='SEC_Contents'))
-    open(os.path.join(output, 'index.html'), 'w').write(index)
+    text=get_text(root_url)
+    open(os.path.join(output, 'index.html'), 'w').write(text)
 
+    soup = bs(text)
     for i, link in enumerate(soup.findAll('a')):
         name = link.text.strip()
         path = link.get('href')
