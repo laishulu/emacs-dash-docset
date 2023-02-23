@@ -131,7 +131,7 @@ def add_infoplist():
            "    <string>index.html</string>" \
            "</dict>" \
            "</plist>".format(name, name, name)
-    open(docset_name + '/Contents/info.plist', 'w').write(info)
+    open(docset_name + '/Contents/Info.plist', 'w').write(info)
 
 
 if __name__ == '__main__':
